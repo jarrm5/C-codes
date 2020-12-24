@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+int getLength(char* s);
+
 int main(int argc, char *argv){
 
     char c[8] = "pie";
@@ -11,5 +13,10 @@ int main(int argc, char *argv){
     strcat(c,"hole");
     printf("%s\n",c);
 
+    printf("%i",getLength(c));
+
     return 0;
+}
+int getLength(char* s){
+    return strlen(s);
 }

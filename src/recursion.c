@@ -2,12 +2,12 @@
 #include <string.h>
 
 int sum(int n);
-void reverseString(char* s);
+char* reverseString(char* str);
 
 int main() {
     
-    char s[3] = "pie";
-    reverseString(s);
+    char s[] = "pie";
+    printf("%s",reverseString(s));
 
     return 0;
 }
@@ -19,10 +19,7 @@ int sum(int n) {
     else
         return n;
 }
-void reverseString(char* str){
-    if(*str){
-        reverseString(str+1);
-        printf("%c", *str);
-    }
-
+char* reverseString(char* str){
+    if(strlen(str) <= 1) return str;
+    return strcat(reverseString(str+1),str);
 }
