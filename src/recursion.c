@@ -1,22 +1,28 @@
 #include <stdio.h>
+#include <string.h>
+
 int sum(int n);
+void reverseString(char* s);
 
 int main() {
-    int number, result;
+    
+    char s[3] = "pie";
+    reverseString(s);
 
-    printf("Enter a positive integer: ");
-    scanf("%d", &number);
-
-    result = sum(number);
-
-    printf("sum = %d", result);
     return 0;
 }
 
+
 int sum(int n) {
     if (n != 0)
-        // sum() function calls itself
         return n + sum(n-1); 
     else
         return n;
+}
+void reverseString(char* str){
+    if(*str){
+        reverseString(str+1);
+        printf("%c", *str);
+    }
+
 }
